@@ -1,0 +1,57 @@
+---
+title: "Report Planos Privados2"
+author: "lidia_sawakuchi"
+date: "May 14, 2018"
+output: pdf_document
+params:
+  a: NA
+  b: NA
+  c: NA
+  d: NA
+  e: NA
+  f: NA
+  g: NA
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+Cnes selecionado:
+
+```{r}
+params$a
+
+```
+Especialidade selecionada:
+```{r}
+params$b
+
+```
+Item selecionado para comparação:
+
+```{r}
+params$c
+
+```
+Comparação feita com a média do item no:
+
+```{r}
+params$d
+
+```
+
+Evolução temporal da comparação com o valor médio:
+```{r}
+params$e
+
+```
+Resumo dos Dados brutos:
+```{r}
+params$f
+
+```
+Primeiras observações dos dados:
+```{r}
+params$g
+
+```

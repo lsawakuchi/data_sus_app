@@ -3,7 +3,7 @@ especialidade <- "cardiologia"
 cnes <- 3808
 ## Connecting to database ----
 
-mydb <- dbConnect(MySQL(), user="master", password="analytics", dbname="mais_saude", host="35.193.221.159")
+mydb <- dbConnect(MySQL(), user=USER, password=PWD, dbname=DB, host=HOST)
 
 ## tables in the database ----
 
@@ -32,5 +32,5 @@ M <- dta$data2
 ds <- par(no.readonly = TRUE)
 par(cex.lab = 1.2, cex.axis=0.5)
 par(mar=c(10,10,3,3),cex.axis=0.8, cex.lab=1.2)
-barplot(H, names.arg = M, ylab = "quantidade", main = "Evolução Temporal", col="darkblue", las=2)
+barplot(H, names.arg = M, ylab = "quantidade", main = "EvoluÃ§Ã£o Temporal", col="darkblue", las=2)
 

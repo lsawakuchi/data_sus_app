@@ -8,7 +8,7 @@ dbDisconnectAll <- function(){
 
 
 loadBase <-function(cnes, especialidade){
-  mydb <- dbConnect(MySQL(), user="master", dbname = "mais_saude", password = "analytics", host = "35.193.221.159")
+  mydb <- dbConnect(MySQL(), user=USER, dbname = DB, password = PWD, host = HOST)
   df <- dbSendQuery(mydb, paste0("select * from mais_saude.notas_especialidades where especialidade='",
                                 especialidade, "' and cnes=",cnes))
   
@@ -22,8 +22,7 @@ loadBase <-function(cnes, especialidade){
 }
 
 especialidades <- function(cnes){
-  mydb <- dbConnect(MySQL(), user = "master", dbname = "mais_saude", password = "analytics",
-                    host = "35.193.221.159")
+  mydb <- dbConnect(MySQL(), user=USER, dbname = DB, password = PWD, host = HOST)
   df = dbSendQuery(mydb, paste0("select distinct cnes, especialidade from mais_saude.notas_especialidades
                                 where cnes=", cnes))
   dta <- fetch(df, n=-1)
@@ -33,7 +32,7 @@ especialidades <- function(cnes){
 }
 
 loadBaseCnes <- function(cnes){
-  mydb <- dbConnect(MySQL(), user="master", dbname = "mais_saude", password = "analytics", host = "35.193.221.159")
+  mydb <- dbConnect(MySQL(), user=USER, dbname = DB, password = PWD, host = HOST)
   df <- dbSendQuery(mydb, paste0("select * from mais_saude.notas_especialidades where cnes=", cnes))
   dta <- fetch(df, n=-1)
   dbDisconnect(mydb)
